@@ -40,8 +40,8 @@
                 <li><a href="/">{% trans 'Home' %}</a><li>
                 <li><a href="/users">{% trans 'Everyone' %}</a></li>
                 {% if not islogin %}
-                <li><a href="/signin">{% trans 'Signin' %}</a></li>
-                <li><a href="/signup">{% trans 'Signup' %}</a></li>
+                <li><a href="/mvc/signin">{% trans 'Signin' %}</a></li>
+                <li><a href="/mvc/signup">{% trans 'Signup' %}</a></li>
                 {% else %}
                 <li><a href="/user/{{ username }}">{% trans 'Me' %}</a></li>
                 <li><a href="/settings">{% trans 'Edit' %}</a></li>

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for tmitter project.
 
@@ -28,9 +29,34 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+# 网站信息设置
+APP_DOMAIN = 'http://127.0.0.1:8000/'
+APP_NAME = 'Tmitter'
+APP_VERSION = '0.2.9'
+APP_COMPANY = 'Thewolfs Team'
+APP_LICENSE = 'GNU General Public License v2'
+
+# 全局分页的每页条数
+PAGE_SIZE = 4
+# 管理后台列表每页条数
+ADMIN_PAGE_SIZE = 20
+
+# 网友空间的好友列表个数限制
+FRIEND_LIST_MAX = 10
+
+# Feed 相关的设置
+FEED_ITEM_MAX = 20
+
+# Email 服务器设置
+EMAIL_HOST = 'smtp.foxmail.com'
+EMAIL_HOST_PASSWORD = '123123'
+EMAIL_HOST_USER = 'huacnlee@foxmail.com'
+EMAIL_SUBJECT_PREFIX = '[Tmitter]'
+
 # Application definition
 
 INSTALLED_APPS = [
+    'mvc.apps.MvcConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
