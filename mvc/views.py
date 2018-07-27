@@ -393,13 +393,12 @@ def signup(request):
     }
 
     # body content
-    _template = loader.get_template('signup.html')
     _context = {
         'page_title': _('Signup'),
         'state': _result,
     }
-    _output = _template.render(_context)
-    return HttpResponse(_output)
+
+    return render(request, 'signup.html', _context)
 
 
 def signout(request):
