@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.contrib import admin
-from django.utils import timesince,html
+from django.utils import html
 from utils import function, formatter
 from tmitter.settings import *
 from django.utils.encoding import python_2_unicode_compatible
@@ -25,7 +25,7 @@ class Category(models.Model):
     class Meta:
         verbose_name = '分类'
         verbose_name_plural = '分类'
-    
+
     def __str__(self):
         return self.name
 
@@ -38,23 +38,23 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class Area(models.Model):
     TYPE_CHOICES = {
-        (0, 'Country'),
-        (1, 'Province'),
-        (2, 'City'),
-        (3, 'District'),
+        (0, '国家'),
+        (1, '省'),
+        (2, '市'),
+        (3, '区县'),
     }
 
-    name = models.CharField('Location', max_length=100)
-    code = models.CharField('Code', max_length=255)
-    type = models.IntegerField('Type', choices=TYPE_CHOICES)
-    parent = models.IntegerField('Parent Number(Associated with yourself)')
+    name = models.CharField('地名', max_length=100)
+    code = models.CharField('代码', max_length=255)
+    type = models.IntegerField('类型', choices=TYPE_CHOICES)
+    parent = models.IntegerField('父级编号（关联自己）')
 
     def __unicode__(self):
         return self.name
 
     class Meta:
-        verbose_name = u'Location'
-        verbose_name_plural = u'Location'
+        verbose_name = u'所在地'
+        verbose_name_plural = u'所在地'
 
 
 class AreaAdmin(admin.ModelAdmin):
@@ -66,16 +66,16 @@ class AreaAdmin(admin.ModelAdmin):
 class User(models.Model):
     id = models.AutoField(primary_key=True)
 
-    username = models.CharField('Username', max_length=20)
-    password = models.CharField('Password', max_length=100)
-    realname = models.CharField('Realname', max_length=20)
+    username = models.CharField('用户名', max_length=20)
+    password = models.CharField('密码', max_length=100)
+    realname = models.CharField('姓名', max_length=20)
     email = models.EmailField('Email')
-    area = models.ForeignKey(Area, verbose_name='Diqu')
-    face = models.ImageField('Face', upload_to='face/%Y/%m/%d', default='', blank=True)
-    url = models.CharField('Personal Page', max_length=200, default='', blank=True)
-    about = models.TextField('About Me', max_length=1000, default='', blank=True)
-    addtime = models.DateTimeField('Signup Time', auto_now=True)
-    friend = models.ManyToManyField("self", verbose_name='Friends')
+    area = models.ForeignKey(Area, verbose_name='地区')
+    face = models.ImageField('头像', upload_to='face/%Y/%m/%d', default='', blank=True)
+    url = models.CharField('个人主页', max_length=200, default='', blank=True)
+    about = models.TextField('关于我', max_length=1000, default='', blank=True)
+    addtime = models.DateTimeField('注册时间', auto_now=True)
+    friend = models.ManyToManyField("self", verbose_name='朋友')
 
     def __unicode__(self):
         return self.username
@@ -90,8 +90,8 @@ class User(models.Model):
         super(User, self).save()
 
     class Meta:
-        verbose_name = u'User Name'
-        verbose_name_plural = u'User Name'
+        verbose_name = u'用户'
+        verbose_name_plural = u'用户'
 
 
 class UserAdmin(admin.ModelAdmin):
@@ -102,10 +102,10 @@ class UserAdmin(admin.ModelAdmin):
 
 class Note(models.Model):
     id = models.AutoField(primary_key=True)
-    message = models.TextField('News')
-    addtime = models.DateTimeField('Publish Time', auto_now=True)
-    category = models.ForeignKey(Category, verbose_name='Source')
-    user = models.ForeignKey(User, verbose_name='Publisher')
+    message = models.TextField('消息')
+    addtime = models.DateTimeField('发布时间', auto_now=True)
+    category = models.ForeignKey(Category, verbose_name='来源')
+    user = models.ForeignKey(User, verbose_name='发布者')
 
     def __unicode__(self):
         return self.message
