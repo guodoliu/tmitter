@@ -335,13 +335,11 @@ def signin(request):
         }
 
     # body content
-    _template = loader.get_template('signin.html')
     _context = {
         'page_title': _('Signin'),
         'state': _state,
     }
-    _output = _template.render(_context)
-    return HttpResponse(_output)
+    return render(request, 'signin.html', _context)
 
 
 def signup(request):
