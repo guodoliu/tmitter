@@ -133,7 +133,7 @@ def __do_signup(request, _userinfo):
     _state['success'] = True
     _state['message'] = _('Successed.')
 
-    mailer.send_regist_success_mail(_userinfo)
+    # mailer.send_regist_success_mail(_userinfo)
     return _state
 
 
@@ -147,12 +147,12 @@ def __result_message(request, _title=_('Message'), _message=_('Unknown error, pr
     # body content
     _template = loader.get_template('result_message.html')
 
-    _context = Context({
+    _context = {
         'page_title': _title,
         'message': _message,
         'go_back_url': _go_back_url,
         'islogin': _islogin
-    })
+    }
 
     _output = _template.render(_context)
     return HttpResponse(_output)
@@ -195,6 +195,7 @@ def index_user_page(request, username, page_index):
         _is_post = True
     except KeyError:
         _is_post = False
+    print _is_post
 
     # save message
     if _is_post:
