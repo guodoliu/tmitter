@@ -42,13 +42,13 @@
             {% else %}
                 <a href="/feed/rss/recent" alt="{% trans 'Subcription' %}"></a>
             {% endif %}
-            <img src="/statics/images/feed.png" style="..." alt="feed icon"/>
+            <img src="/static/images/feed.png" style="..." alt="feed icon"/>
         </div>
     </div>
 
     {% if user %}
         <div class="friends">
-        <h3>{{ user.realname }}{% trans 'friends' %}</h3>
+        <h3>{{ user.realname }} {% trans 'friends' %}</h3>
         <div class="list">
             {% for friend in friends %}
                 <a href="{% url 'tmitter-mvc-views-index_user' friend.username %}" title="{{ friend.realname }}"><img src="{{ friend.face|face16 }}" alt="{{ friend.realname }}" class="face16"/> </a>

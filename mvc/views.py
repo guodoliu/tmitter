@@ -195,7 +195,6 @@ def index_user_page(request, username, page_index):
         _is_post = True
     except KeyError:
         _is_post = False
-    print _is_post
 
     # save message
     if _is_post:
@@ -209,12 +208,12 @@ def index_user_page(request, username, page_index):
         try:
             _user = User.objects.get(id=__user_id(request))
         except:
-            return HttpResponseRedirect('/signin/')
+            return HttpResponseRedirect('/mvc/signin/')
 
         _note = Note(message=_message, category=_category, user=_user)
         _note.save()
 
-        return HttpResponseRedirect('/user/' + _user.username)
+        return HttpResponseRedirect('/mvc/user/' + _user.username)
 
     # get message list
     _offset_index = (int(page_index) - 1) * PAGE_SIZE
@@ -258,8 +257,6 @@ def index_user_page(request, username, page_index):
     _notes = _notes[_offset_index : _last_item_index]
 
     # body content
-    _template = loader.get_template('index.html')
-
     _context = {
         'page_title': _page_title,
         'notes': _notes,
@@ -272,8 +269,7 @@ def index_user_page(request, username, page_index):
         'login_user_friend_list': _login_user_friend_list,
     }
 
-    _output = _template.render(_context)
-    return HttpResponse(_output)
+    return render(request, 'index.html', _context)
 
 
 def detail(request, id):
@@ -405,7 +401,7 @@ def signout(request):
     request.session['userid'] = -1
     request.session['username'] = ''
 
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/mvc/')
 
 
 def settings(request):
@@ -456,15 +452,13 @@ def settings(request):
         _user.save(False)
         _state['message'] = _('Successed.')
 
-    _template = loader.get_template('settings.html')
     _context = {
         'page_title': _('Profile'),
         'state': _state,
         'islogin': _islogin,
         'user': _user,
     }
-    _output = _template.render(_context)
-    return HttpResponse(_output)
+    return render(request, 'settings.html', _context)
 
 
 def users_index(request):

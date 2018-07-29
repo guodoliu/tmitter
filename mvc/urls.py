@@ -17,6 +17,6 @@ urlpatterns = [
     url(r'^message/(?P<id>\d+)/$', views.detail, name='tmitter-mvc-views-detail'),
     url(r'^message/(?P<id>)\d+/delete/$', views.detail_delete, name='tmitter-mvc-views-detail_delete'),
     url(r'^friend/add/(?P<username>[a-zA-Z\-_\d]+)', views.friend_add, name='tmitter-mvc-views-friend_add'),
-    url(r'^friend/remove/(?P<username>[a-zA-Z\-_\d]+)', views.friend_remove),
+    url(r'^friend/remove/(?P<username>[a-zA-Z\-_\d]+)', views.friend_remove, name='tmitter-mvc-views-friend_remove'),
     url(r'^api/note/add/', views.api_note_add),
 ]

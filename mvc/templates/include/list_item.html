@@ -6,7 +6,7 @@
 <p class="message">
     <span class="face"><img src="{{ item.user.face|face16 }}" class="face16"></span>
     <a href="{% url 'tmitter-mvc-views-index_user' item.user.username %}" class="name">{{ item.user.realname }}</a>
-    {{ item.message|urlize|slice: ":10" }}... <a class="more" href="{% url 'tmitter-mvc-views-detail' item.id %}">{% trans 'Details' %}...</a>
+    {{ item.message|urlize|slice:":10" }}... <a class="more" href="{% url 'tmitter-mvc-views-detail' item.id %}">{% trans 'Details' %}...</a>
 </p>
 <p class="info">
     <span class="date">{{ item.addtime|timesince }} {% trans 'ago' %},</span>

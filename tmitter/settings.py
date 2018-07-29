@@ -53,6 +53,22 @@ EMAIL_HOST_PASSWORD = '123123'
 EMAIL_HOST_USER = 'huacnlee@foxmail.com'
 EMAIL_SUBJECT_PREFIX = '[Tmitter]'
 
+# Absolute path to the directory that holds media.
+# Example: "/home/media/media.lawrence.com/"
+MEDIA_ROOT =  '%s/mvc/static/uploads/' % BASE_DIR
+
+# URL that handles the media served from MEDIA_ROOT.
+# Example: "http://media.lawrence.com"
+MEDIA_URL = '/mvc/static/uploads/'
+
+# Default user face
+DEFAULT_FACE = '/static/images/face%d.png'
+
+# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
+# trailing slash.
+# Examples: "http://foo.com/media/", "/media/".
+ADMIN_MEDIA_PREFIX = '/media/'
+
 # Application definition
 
 INSTALLED_APPS = [
