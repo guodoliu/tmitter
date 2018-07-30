@@ -1,0 +1,331 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-30 16:34+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/404.html:9
+msgid "404 error. The page doesn\"t exist."
+msgstr "404 错误。页面不存在。"
+
+#: templates/500.html:9
+msgid "Unknow error,code:500."
+msgstr "未知错误， 代码：500。"
+
+#: templates/base.html:40 views.py:187
+msgid "Home"
+msgstr "首页"
+
+#: templates/base.html:41 views.py:468
+msgid "Everyone"
+msgstr "所有人"
+
+#: templates/base.html:43 views.py:333
+msgid "Signin"
+msgstr "登陆"
+
+#: templates/base.html:44 views.py:371 views.py:389
+msgid "Signup"
+msgstr "注册"
+
+#: templates/base.html:46
+msgid "Me"
+msgstr "我"
+
+#: templates/base.html:47
+msgid "Edit"
+msgstr "编辑"
+
+#: templates/base.html:48
+msgid "Signout"
+msgstr "退出"
+
+#: templates/control/home_pagebar.html:8 templates/control/home_pagebar.html:10
+#: templates/control/user_pagebar.html:8 templates/control/user_pagebar.html:10
+#: templates/control/userslist_pagebar.html:8
+#: templates/control/userslist_pagebar.html:10
+msgid "First"
+msgstr "首页"
+
+#: templates/control/home_pagebar.html:15
+#: templates/control/home_pagebar.html:17
+#: templates/control/user_pagebar.html:15
+#: templates/control/user_pagebar.html:17
+#: templates/control/userslist_pagebar.html:15
+#: templates/control/userslist_pagebar.html:17
+msgid "Prev"
+msgstr "前一页"
+
+#: templates/control/home_pagebar.html:23
+#: templates/control/home_pagebar.html:25
+#: templates/control/user_pagebar.html:23
+#: templates/control/user_pagebar.html:25
+#: templates/control/userslist_pagebar.html:23
+#: templates/control/userslist_pagebar.html:25
+msgid "Next"
+msgstr "下一页"
+
+#: templates/control/home_pagebar.html:30
+#: templates/control/home_pagebar.html:32
+#: templates/control/user_pagebar.html:30
+#: templates/control/user_pagebar.html:32
+#: templates/control/userslist_pagebar.html:30
+#: templates/control/userslist_pagebar.html:32
+msgid "Last"
+msgstr "末页"
+
+#: templates/control/home_pagebar.html:35
+#: templates/control/user_pagebar.html:35
+#: templates/control/userslist_pagebar.html:35
+msgid "All of "
+msgstr "所有"
+
+#: templates/control/home_pagebar.html:35
+#: templates/control/user_pagebar.html:35
+msgid "messages"
+msgstr "消息"
+
+#: templates/control/userslist_pagebar.html:35
+msgid "users. "
+msgstr "用户"
+
+#: templates/detail.html:25 templates/include/list_item.html:12
+msgid "ago"
+msgstr "前"
+
+#: templates/detail.html:26 templates/include/list_item.html:13
+msgid "from"
+msgstr "从"
+
+#: templates/detail.html:29 templates/include/list_item.html:16
+msgid "Delete"
+msgstr "删除"
+
+#: templates/include/list_item.html:9
+msgid "Details"
+msgstr "细节"
+
+#: templates/include/postform.html:10
+msgid "What are you doing?"
+msgstr "你在做什么？"
+
+#: templates/include/postform.html:18
+msgid "Update"
+msgstr "更新"
+
+#: templates/include/userinfo.html:11 templates/settings.html:15
+#: templates/signup.html:18
+msgid "Name"
+msgstr "名字"
+
+#: templates/include/userinfo.html:13
+msgid "Open as new window."
+msgstr "打开新窗口"
+
+#: templates/include/userinfo.html:13 templates/settings.html:23
+msgid "Blog"
+msgstr "博客"
+
+#: templates/include/userinfo.html:16
+msgid "Remove friend"
+msgstr "删除朋友"
+
+#: templates/include/userinfo.html:16
+msgid "Unfollow"
+msgstr "解除好友"
+
+#: templates/include/userinfo.html:18
+msgid "Follow"
+msgstr "加为好友"
+
+#: templates/index.html:10
+msgid "recent message"
+msgstr "最新消息"
+
+#: templates/index.html:12
+msgid "Recent message of everyone"
+msgstr ""
+
+#: templates/index.html:41
+msgid "Subscription"
+msgstr "订阅"
+
+#: templates/index.html:43
+msgid "Subcription"
+msgstr "订阅"
+
+#: templates/index.html:51
+msgid "friends"
+msgstr "朋友"
+
+#: templates/result_message.html:10 templates/result_message.html:12
+msgid "Go back"
+msgstr "返回"
+
+#: templates/settings.html:19 templates/signup.html:22
+msgid "Email"
+msgstr "邮箱"
+
+#: templates/settings.html:27
+msgid "Face"
+msgstr "头像"
+
+#: templates/settings.html:28
+msgid "My face"
+msgstr "我的头像"
+
+#: templates/settings.html:35
+msgid "About me"
+msgstr "关于我"
+
+#: templates/settings.html:40
+msgid "Save"
+msgstr "保存"
+
+#: templates/signin.html:14 templates/signup.html:14
+msgid "Username"
+msgstr "用户名"
+
+#: templates/signin.html:18 templates/signup.html:26
+msgid "Password"
+msgstr "密码"
+
+#: templates/signin.html:23
+msgid "Login"
+msgstr "登陆"
+
+#: templates/signup.html:30
+msgid "Confirm"
+msgstr "确认"
+
+#: templates/signup.html:35
+msgid "Submit"
+msgstr "提交"
+
+#: views.py:65
+msgid "Password incorrect."
+msgstr "密码不正确"
+
+#: views.py:68
+msgid "User does not exist."
+msgstr "用户不存在"
+
+#: views.py:96
+msgid "\"Username\" have not inputed."
+msgstr "'用户名'还未输入。"
+
+#: views.py:101
+msgid "\"Password\" have not inputed."
+msgstr "'密码'还未输入"
+
+#: views.py:106
+msgid "\"Real Name\" have not inputed."
+msgstr "'姓名'还未输入"
+
+#: views.py:111
+msgid "\"Email\" have not inputed."
+msgstr "'邮箱'还未输入"
+
+#: views.py:116
+msgid "\"Username\" have existed."
+msgstr "'用户名'已经存在"
+
+#: views.py:121
+msgid "\"Confirm Password\" have not match."
+msgstr ""
+
+#: views.py:134 views.py:450
+msgid "Successed."
+msgstr "成功"
+
+#: views.py:141
+msgid "Message"
+msgstr "消息"
+
+#: views.py:141
+msgid "Unknown error, processing interrupted."
+msgstr "未知异常，操作已经自动中断。"
+
+#: views.py:280
+#, python-format
+msgid "%s's message %s"
+msgstr ""
+
+#: views.py:300
+msgid "Message deleted."
+msgstr ""
+
+#: views.py:302
+msgid "Delete failed."
+msgstr ""
+
+#: views.py:304
+#, python-format
+msgid "Message %s"
+msgstr ""
+
+#: views.py:324
+msgid "Login successed"
+msgstr ""
+
+#: views.py:324
+msgid "You are logined now."
+msgstr ""
+
+#: views.py:328
+msgid "Please login first."
+msgstr ""
+
+#: views.py:375
+msgid "Signup successed"
+msgstr ""
+
+#: views.py:375
+msgid "Your account was registered success."
+msgstr ""
+
+#: views.py:447
+msgid "Error"
+msgstr ""
+
+#: views.py:453
+msgid "Profile"
+msgstr ""
+
+#: views.py:515 views.py:522 views.py:543
+msgid "Sorry"
+msgstr ""
+
+#: views.py:515 views.py:543
+msgid "This user does not exist."
+msgstr ""
+
+#: views.py:520 views.py:548
+msgid "Successed"
+msgstr ""
+
+#: views.py:520
+#, python-format
+msgid "%s and you are friend now."
+msgstr ""
+
+#: views.py:522
+msgid "This user dose not exist."
+msgstr ""
+
+#: views.py:550
+msgid "Undisposed"
+msgstr ""
