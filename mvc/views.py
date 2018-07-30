@@ -145,8 +145,6 @@ def __result_message(request, _title=_('Message'), _message=_('Unknown error, pr
         _go_back_url = function.get_referer_url(request)
 
     # body content
-    _template = loader.get_template('result_message.html')
-
     _context = {
         'page_title': _title,
         'message': _message,
@@ -154,8 +152,7 @@ def __result_message(request, _title=_('Message'), _message=_('Unknown error, pr
         'islogin': _islogin
     }
 
-    _output = _template.render(_context)
-    return HttpResponse(_output)
+    return render(request, 'result_message.html', _context)
 
 
 # ###############
@@ -279,7 +276,6 @@ def detail(request, id):
     _note = get_object_or_404(Note, id=id)
 
     # body content
-    _template = loader.get_template('detail.html')
     _context = {
         'page_title': _('%s\'s message %s') % (_note.user.realname, id),
         'item': _note,
@@ -287,15 +283,16 @@ def detail(request, id):
         'userid': __user_id(request),
     }
 
-    _output = _template.render(_context)
-    return HttpResponse(_output)
+    return render(request, 'detail.html', _context)
 
 
 def detail_delete(request, id):
     # get user login status
     _islogin = __is_login(request)
 
-    _note = get_object_or_404(Note, id=id)
+    #_note = get_object_or_404(Note, id=id)
+    print "guodoliu", id
+    _note = Note.objects.get(id=id)
     _message = ""
 
     try:
@@ -487,7 +484,6 @@ def users_list(request, _page_index=1):
 
     _users = _users[_offset_index : _last_item_index]
 
-    _template = loader.get_template('users_list.html')
     _context = {
         'page_title': _page_index,
         'users': _users,
@@ -497,8 +493,7 @@ def users_list(request, _page_index=1):
         'page_bar': _page_bar,
     }
 
-    _output = _template.render(_context)
-    return HttpResponse(_output)
+    return render(request, 'users_list.html', _context)
 
 
 def friend_add(request, username):
@@ -506,7 +501,7 @@ def friend_add(request, username):
     _islogin = __is_login(request)
 
     if not _islogin:
-        return HttpResponseRedirect('/signin/')
+        return HttpResponseRedirect('/mvc/signin/')
 
     _state = {
         'success': False,
@@ -534,7 +529,7 @@ def friend_remove(request, username):
     _islogin = __is_login(request)
 
     if not _islogin:
-        return HttpResponseRedirect('/signin/')
+        return HttpResponseRedirect('/mvc/signin/')
 
     _state = {
         'success': False,

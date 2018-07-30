@@ -48,9 +48,13 @@ FRIEND_LIST_MAX = 10
 FEED_ITEM_MAX = 20
 
 # Email 服务器设置
-EMAIL_HOST = 'smtp.foxmail.com'
-EMAIL_HOST_PASSWORD = '123123'
-EMAIL_HOST_USER = 'huacnlee@foxmail.com'
+# Email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.163.com'
+EMAIL_PORT = 25
+EMAIL_HOST_PASSWORD = 'lgd19910927'
+EMAIL_HOST_USER = 'jellypop@163.com'
 EMAIL_SUBJECT_PREFIX = '[Tmitter]'
 
 # Absolute path to the directory that holds media.
